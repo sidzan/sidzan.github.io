@@ -1,80 +1,77 @@
-import {BlogPosts} from 'app/components/posts'
+import { BlogPosts } from 'app/components/posts'
 
 export default function Page() {
   return (
-    <section>
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
+    <section className="max-w-4xl mx-auto px-4 py-12">
+      <h1 className="mb-12 text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
         My Portfolio
       </h1>
-      <div className="portfolio">
+      <div className="space-y-16">
         <section className="about-me">
-          <h1>About Me</h1>
-          <p>
+          <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
             I am Sijan, a seasoned Senior Software Engineer with over 9 years of experience building scalable,
-            high-performance solutions. I specialize
-            in <strong>Node.js</strong>, <strong>React</strong>, <strong>AWS</strong>,
-            and <strong>PostgreSQL</strong>, with a strong focus on backend development, architecture, and design
-            thinking.
-            Passionate about crafting user-focused digital products, I excel at driving innovation and mentoring teams
-            to
-            deliver impactful software solutions.
+            high-performance solutions. I specialize in <strong className="text-indigo-600 dark:text-indigo-400">Node.js</strong>,
+            <strong className="text-indigo-600 dark:text-indigo-400"> React</strong>,
+            <strong className="text-indigo-600 dark:text-indigo-400"> AWS</strong>, and
+            <strong className="text-indigo-600 dark:text-indigo-400"> PostgreSQL</strong>, with a strong focus on backend development,
+            architecture, and design thinking. Passionate about crafting user-focused digital products, I excel at driving
+            innovation and mentoring teams to deliver impactful software solutions.
           </p>
         </section>
 
         <section className="what-i-do">
-          <h2>What I Do</h2>
-          <ul>
-            <li><strong>Backend Engineering:</strong> Designing and implementing robust, scalable server-side solutions.
-            </li>
-            <li><strong>Frontend Development:</strong> Creating seamless user experiences with React and modern UI
-              practices.
-            </li>
-            <li><strong>Cloud Architecture:</strong> Leveraging AWS to deliver secure, reliable, and cost-effective
-              solutions.
-            </li>
-            <li><strong>Database Management:</strong> Optimizing database structures and performance for complex
-              applications.
-            </li>
-            <li><strong>Team Leadership:</strong> Mentoring developers and introducing tools to improve efficiency and
-              reduce development time.
-            </li>
+          <h2 className="mb-6 text-2xl font-semibold text-gray-900 dark:text-white">What I Do</h2>
+          <ul className="space-y-4">
+            {[
+              ["Backend Engineering", "Designing and implementing robust, scalable server-side solutions."],
+              ["Frontend Development", "Creating seamless user experiences with React and modern UI practices."],
+              ["Cloud Architecture", "Leveraging AWS to deliver secure, reliable, and cost-effective solutions."],
+              ["Database Management", "Optimizing database structures and performance for complex applications."],
+              ["Team Leadership", "Mentoring developers and introducing tools to improve efficiency and reduce development time."]
+            ].map(([title, desc]) => (
+              <li key={title} className="flex flex-col sm:flex-row sm:items-start">
+                <strong className="min-w-[200px] text-indigo-600 dark:text-indigo-400">{title}:</strong>
+                <span className="text-gray-700 dark:text-gray-300">{desc}</span>
+              </li>
+            ))}
           </ul>
         </section>
 
         <section className="key-projects">
-          <h2>Key Projects</h2>
-          <ul>
-            <li><strong>Digital Voucher System:</strong> Developed a digital voucher distribution system for Thailand's
-              largest theater chain.
-            </li>
-            <li><strong>Grocery Delivery Service:</strong> Built a grocery delivery platform for Norwegian senior
-              citizens during COVID-19.
-            </li>
-            <li><strong>High-Traffic PWA:</strong> Engineered a high-traffic Progressive Web App serving over 10 million
-              users across Southeast Asia.
-            </li>
-            <li><strong>Cloud Services for ISUZU Japan:</strong> Managed serverless cloud services and streamlined
-              operations.
-            </li>
-          </ul>
+          <h2 className="mb-6 text-2xl font-semibold text-gray-900 dark:text-white">Key Projects</h2>
+          <div className="grid gap-6 md:grid-cols-2">
+            {[
+              ["Digital Voucher System", "Developed a digital voucher distribution system for Thailand's largest theater chain."],
+              ["Grocery Delivery Service", "Built a grocery delivery platform for Norwegian senior citizens during COVID-19."],
+              ["High-Traffic PWA", "Engineered a high-traffic Progressive Web App serving over 10 million users across Southeast Asia."],
+              ["Cloud Services for ISUZU Japan", "Managed serverless cloud services and streamlined operations."]
+            ].map(([title, desc]) => (
+              <div key={title} className="p-6 rounded-lg bg-gray-50 dark:bg-gray-800">
+                <h3 className="mb-2 font-semibold text-indigo-600 dark:text-indigo-400">{title}</h3>
+                <p className="text-gray-700 dark:text-gray-300">{desc}</p>
+              </div>
+            ))}
+          </div>
         </section>
 
         <section className="core-values">
-          <h2>Core Values</h2>
-          <p>
+          <h2 className="mb-6 text-2xl font-semibold text-gray-900 dark:text-white">Core Values</h2>
+          <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
             I believe in being positive, humble, and a good influence in the workplace. My leadership style emphasizes
             collaboration, clear communication, and fostering a growth mindset within teams.
           </p>
         </section>
 
-        <section className="contact">
-          <h2>Let’s Work Together</h2>
-          <p>If you’re looking for someone to bring expertise, innovation, and leadership to your project, feel free to
-            connect!</p>
+        <section className="contact bg-indigo-50 dark:bg-gray-800 rounded-xl p-8">
+          <h2 className="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">Let's Work Together</h2>
+          <p className="text-lg text-gray-700 dark:text-gray-300">
+            If you're looking for someone to bring expertise, innovation, and leadership to your project, feel free to connect!
+          </p>
         </section>
       </div>
-      <div className="my-8">
-        <BlogPosts/>
+
+      <div className="mt-16">
+        <BlogPosts />
       </div>
     </section>
   )
